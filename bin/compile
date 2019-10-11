@@ -38,6 +38,7 @@ install_dotnet $BUILD_DIR $CACHE_DIR $DOTNET_SDK_VERSION $DOTNET_RUNTIME_VERSION
 
 echo "PATH"
 export PATH="${BUILD_DIR}/.heroku/dotnet:${PATH}"
+echo $PATH
 
 cd $BUILD_DIR
 
