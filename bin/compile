@@ -33,17 +33,10 @@ DOTNET_SDK_VERSION=${DOTNET_SDK_VERSION:-2.2.0}
 DOTNET_RUNTIME_VERSION=${DOTNET_RUNTIME_VERSION:-2.2.0}
 BUILD_CONFIGURATION=${BUILD_CONFIGURATION:-Release}
 
+chmod 777
+
 echo "Installing dotnet"
 install_dotnet $BUILD_DIR $CACHE_DIR $DOTNET_SDK_VERSION $DOTNET_RUNTIME_VERSION
-
-sudo apt-get update
-echo "apt-get update"
-sudo apt-get install apt-transport-https
-echo "apt-get install apt-transport-https"
-sudo apt-get update
-echo "apt-get update"
-sudo apt-get install dotnet-sdk-2.2
-echo "apt-get install dotnet-sdk-2.2"
 
 echo "Dotnet info before"
 dotnet --info
