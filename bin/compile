@@ -79,5 +79,9 @@ else
 	echo "Add web process to Procfile" | indent
 	cat << EOT >> ${BUILD_DIR}/Procfile
 web: cd \$HOME/heroku_output && ./${PROJECT_NAME}
+
+dotnet run
+echo "dotnet run"
+
 EOT
 fi
