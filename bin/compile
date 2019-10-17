@@ -80,7 +80,7 @@ else
 	echo "Add web process to Procfile" | indent	
 	echo "\$HOME/heroku_output && ./${PROJECT_NAME}"
 	cat << EOT >> ${BUILD_DIR}/Procfile
-	web: dotnet /tmp/build/webApp/bin/Release/netcoreapp3.0/linux-x64/webApp.dll --urls http://+:\$PORT
+	web: /tmp/build/.heroku/dotnet /tmp/build/webApp/bin/Release/netcoreapp3.0/linux-x64/webApp.dll --urls http://+:\$PORT
 EOT
 echo "Build Successed"
 fi
