@@ -80,7 +80,7 @@ else
 	echo "Add web process to Procfile" | indent
 	cat << EOT >> ${BUILD_DIR}/Procfile
 echo "\$HOME/heroku_output && ./${PROJECT_NAME}"
-web: cd \$HOME/heroku_output && ./${PROJECT_NAME}
+web: ASPNETCORE_URLS='http://+:\$PORT' dotnet ./webApp.dll --urls http://+:\$PORT
 echo "Build Successed"
 
 EOT
