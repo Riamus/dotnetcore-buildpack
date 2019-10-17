@@ -79,11 +79,9 @@ if [ -f ${BUILD_DIR}/Procfile ] && grep -q '^web:' ${BUILD_DIR}/Procfile ; then
 else
 	echo "Add web process to Procfile" | indent
 	cat << EOT >> ${BUILD_DIR}/Procfile
+echo "\$HOME/heroku_output && ./${PROJECT_NAME}"
 web: cd \$HOME/heroku_output && ./${PROJECT_NAME}
 echo "Build Successed"
-
-dotnet run
-echo "dotnet run"
 
 EOT
 fi
